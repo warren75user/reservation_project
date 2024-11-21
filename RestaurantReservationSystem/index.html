@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Reservation System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Restaurant Reservation System</h1>
+    <nav>
+      <a href="#customer">Customer</a>
+      <a href="#reservation">Reservation</a>
+      <a href="#order">Order</a>
+      <a href="#menu">Menu Item</a>
+      <a href="#staff">Staff</a>
+      <a href="#feedback">Feedback</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Customer Section -->
+    <section id="customer" class="card">
+      <h2>Customer</h2>
+      <form id="customerForm">
+        <label for="customerName">Name:</label>
+        <input type="text" id="customerName" name="name" required>
+
+        <label for="contactInfo">Contact Info:</label>
+        <input type="text" id="contactInfo" name="contactInfo" maxlength="50" required>
+
+        <label for="loyaltyPoints">Loyalty Points:</label>
+        <input type="number" id="loyaltyPoints" name="loyaltyPoints">
+
+        <button type="submit">Add Customer</button>
+      </form>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="card">
+      <h2>Reservation</h2>
+      <form id="reservationForm">
+        <label for="customerID">Customer ID:</label>
+        <input type="number" id="customerID" name="customerID" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="guestCount">Guest Count:</label>
+        <input type="number" id="guestCount" name="guestCount" min="1" required>
+
+        <label for="staffID">Staff ID:</label>
+        <input type="number" id="staffID" name="staffID" required>
+
+        <button type="submit">Submit Reservation</button>
+      </form>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="card">
+      <h2>Order</h2>
+      <form id="orderForm">
+        <label for="reservationID">Reservation ID:</label>
+        <input type="number" id="reservationID" name="reservationID" required>
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" id="totalAmount" name="totalAmount" step="0.01" required>
+
+        <label for="orderDate">Order Date:</label>
+        <input type="datetime-local" id="orderDate" name="orderDate" required>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+
+    <!-- Menu Item Section -->
+    <section id="menu" class="card">
+      <h2>Menu Item</h2>
+      <form id="menuItemForm">
+        <label for="menuItemName">Name:</label>
+        <input type="text" id="menuItemName" name="name" required>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+
+        <button type="submit">Add Menu Item</button>
+      </form>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" class="card">
+      <h2>Staff</h2>
+      <form id="staffForm">
+        <label for="staffName">Name:</label>
+        <input type="text" id="staffName" name="name" required>
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" required>
+
+        <label for="schedule">Schedule:</label>
+        <textarea id="schedule" name="schedule" required></textarea>
+
+        <button type="submit">Add Staff</button>
+      </form>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="card">
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+        <label for="feedbackCustomerID">Customer ID:</label>
+        <input type="number" id="feedbackCustomerID" name="customerID" required>
+
+        <label for="feedbackReservationID">Reservation ID:</label>
+        <input type="number" id="feedbackReservationID" name="reservationID" required>
+
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
